@@ -81,9 +81,10 @@ void identifyCluster(pair <int, vector<int>> adjList[])
             cout<<"Cluster Number:"<<cluster_number<<" "<<"Number of sites="<<cluster_count<<endl;
         }
     }
+    cout<<"\nTotal number of clusters: "<<cluster_number<<endl;
 
 }
-//-----------------------------------------------------------------
+//**************End of cluster identification function************
 
 //**********************Driver code*******************************
 int main()
@@ -106,15 +107,15 @@ int main()
 		}
 	}
 
+//-----------------------Making the Adjency List From Lattice-----------
 	pair <int, vector<int>> adjList[rows*columns+1]; // Declaring Adjency List
 	int vertex;
 
-//-----------------------Making the Adjency List From Lattice-----------
 	for(int i = 1; i <=rows; i++)
 	{
 		for(int j = 1; j <=columns; j++)
 		{
-			vertex = vertex_number(i,j);
+			vertex = vertex_number(i,j); // getting the vertex number
 			adjList[vertex].first = Lattice[i][j];
 			if(Lattice[i][j]==1)
 			{
